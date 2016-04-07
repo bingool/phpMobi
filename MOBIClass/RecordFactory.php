@@ -102,12 +102,12 @@ function mb_str_split($string, $split_length = 1){
 
 	$split_length = ($split_length <= 0) ? 1 : $split_length;
 
-	$mb_strlen = mb_strlen($string, 'utf-8');
+	$mb_strlen = strlen($string);
 
 	$array = array();
 
 	for($i = 0; $i < $mb_strlen; $i += $split_length){
-		$array[] = mb_substr($string, $i, $split_length);
+		$array[] = substr($string, $i, $split_length);
 	}
 
 	return $array;
